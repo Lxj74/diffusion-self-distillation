@@ -2,6 +2,19 @@
 
 **CVPR 2025**
 
+[![Website](docs/badge-website.svg)](https://primecai.github.io/dsd/)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2411.18616)
+[![HuggingFace Demo](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20-Demo-yellow)](https://huggingface.co/spaces/primecai/diffusion-self-distillation)
+[![HuggingFace Model](https://img.shields.io/badge/🤗%20Hugging%20Face%20-Model-green)](https://huggingface.co/primecai/dsd_model)
+[![Data](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20-Data-yellow)](https://huggingface.co/datasets/primecai/dsd_data)
+
+[Shengqu Cai](https://primecai.github.io/),
+[Eric Ryan Chan](https://ericryanchan.github.io/about.html),
+[Yunzhi Zhang](https://cs.stanford.edu/~yzzhang/),
+[Leonidas Guibas](https://www.cs.stanford.edu/people/leonidas-guibas),
+[Jiajun Wu](https://jiajunwu.com/),
+[Gordon Wetzstein](https://stanford.edu/~gordonwz/ )
+
 This repository represents the official implementation of the paper titled "Diffusion Self-Distillation for Zero-Shot Customized Image Generation".
 
 *This repository is still under construction, many updates will be applied in the near future.*
@@ -17,19 +30,6 @@ This repository represents the official implementation of the paper titled "Diff
 
 - Photorealistic face identity: We did not train the model specifically for face identity, as many other dedicated models excel in this area.
 - Relighting/Structure-preserved generation: The model is under further alpha testing and will be released in the future.
-
-[![Website](docs/badge-website.svg)](https://primecai.github.io/dsd/)
-[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2411.18616)
-[![HuggingFace Demo](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20-Demo-yellow)](https://huggingface.co/spaces/primecai/diffusion-self-distillation)
-[![HuggingFace Model](https://img.shields.io/badge/🤗%20Hugging%20Face%20-Model-green)](https://huggingface.co/primecai/dsd_model)
-[![Data](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20-Data-yellow)](https://huggingface.co/datasets/primecai/dsd_data)
-
-[Shengqu Cai](https://primecai.github.io/),
-[Eric Ryan Chan](https://ericryanchan.github.io/about.html),
-[Yunzhi Zhang](https://cs.stanford.edu/~yzzhang/),
-[Leonidas Guibas](https://www.cs.stanford.edu/people/leonidas-guibas),
-[Jiajun Wu](https://jiajunwu.com/),
-[Gordon Wetzstein](https://stanford.edu/~gordonwz/ )
 
 Text-to-image diffusion models produce impressive results but are frustrating tools for artists who desire fine-grained control. For example, a common use case is to create images of a specific instance in novel contexts, i.e., "identity-preserving generation". This setting, along with many other tasks (e.g., relighting), is a natural fit for image+text-conditional generative models. However, there is insufficient high-quality paired data to train such a model directly. We propose Diffusion Self-Distillation, a method for using a pre-trained text-to-image model to generate its own dataset for text-conditioned image-to-image tasks. We first leverage a text-to-image diffusion model's in-context generation ability to create grids of images and curate a large paired dataset with the help of a Visual-Language Model. We then fine-tune the text-to-image model into a text+image-to-image model using the curated paired dataset. We demonstrate that Diffusion Self-Distillation outperforms existing zero-shot methods and is competitive with per-instance tuning techniques on a wide range of identity-preservation generation tasks, without requiring test-time optimization.
 
